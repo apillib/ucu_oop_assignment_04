@@ -53,7 +53,7 @@
 
         // Format the timestamp
         const dateOptions = {hour: 'numeric', minute: 'numeric'};
-        const datetime = new Date(data.datetime).toLocalString('en', dateOptions);
+        const datetime = new Date(data.datetime).toLocaleString('en', dateOptions);
 
         // Determine if the message is from the current user
         const isMe = data.user === username;
