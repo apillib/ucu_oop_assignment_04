@@ -1,7 +1,7 @@
 from tkinter import * 
-from tkinter.ttk import Frame, Button,Label,Entry, Style 
-from tkinter import BOTH,END, messagebox 
-import sys 
+from tkinter.ttk import Button,Label,Entry, Style 
+from tkinter import END, messagebox 
+
 class FeedBackDlg(Toplevel): 
    
     def __init__(self): 
@@ -51,14 +51,12 @@ class FeedBackDlg(Toplevel):
 
         ypos += 30 
         #----------radio buttons--------------- 
-        serviceChoices = [("Disappointed", "0"),("Satisfied", "1"),("Good", 
-"2"),("Excellent", "3")] 
+        serviceChoices = [("Disappointed", "0"),("Satisfied", "1"),("Good", "2"),("Excellent", "3")] 
         self.serviceFeedback = StringVar() 
         self.serviceFeedback.set("2") # initial value 
         inc = 0 
         for text, val in serviceChoices: 
-            radBtn = Radiobutton(self, text=text, variable=self.serviceFeedback, 
-value=val) 
+            radBtn = Radiobutton(self, text=text, variable=self.serviceFeedback, value=val) 
             radBtn.place(x = xpos2 + inc, y = ypos) 
             inc += 100 
        #------------------------------------- 
@@ -107,3 +105,4 @@ value=val)
         print("service feedback = " + str(self.serviceFeedback.get())) 
         print("state = " + str(self.lb.curselection()[0])) 
         print("department = " + self.dept.get()) 
+        messagebox.showinfo("Thank You", "Feedback submitted successfully!")
